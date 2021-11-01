@@ -34,6 +34,10 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("cost",Random.nextDouble(30.00,150.00))
         intent.putExtra("id",Random.hashCode())
         setResult(RESULT_OK,intent)
+        binding.editTextName.text.clear()
+        binding.editTextSurname.text.clear()
+        binding.editTextAge.text.clear()
+        binding.editTextRoomType.text.clear()
         finish()
     }
 
