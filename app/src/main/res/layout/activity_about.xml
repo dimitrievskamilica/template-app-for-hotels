@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".AboutActivity">
 
     <TextView
         android:id="@+id/textViewSurname"
         android:layout_width="101dp"
         android:layout_height="35dp"
         android:layout_marginTop="40dp"
-        android:text="Surname"
+        android:text="Description"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/textViewName" />
@@ -44,8 +44,8 @@
         android:id="@+id/textViewAge"
         android:layout_width="87dp"
         android:layout_height="33dp"
-        android:layout_marginTop="36dp"
-        android:text="Age"
+        android:layout_marginTop="76dp"
+        android:text="Version"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/textViewSurname" />
@@ -55,7 +55,7 @@
         android:layout_width="121dp"
         android:layout_height="37dp"
         android:layout_marginTop="36dp"
-        android:text="Room type"
+        android:text="Author"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/textViewAge" />
@@ -67,58 +67,6 @@
         app:barrierDirection="right"
         app:constraint_referenced_ids="textViewRoomType,textViewAge,textViewName,textViewSurname"
         tools:layout_editor_absoluteX="411dp" />
-
-    <EditText
-        android:id="@+id/editTextName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:hint="Mark"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintStart_toEndOf="@+id/textViewName"
-        app:layout_constraintTop_toTopOf="@+id/guideline3" />
-
-    <EditText
-        android:id="@+id/editTextSurname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:hint="Twain"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintStart_toEndOf="@+id/textViewSurname"
-        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
-
-    <EditText
-        android:id="@+id/editTextAge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:hint="30"
-        android:inputType="number"
-        android:minHeight="48dp"
-        app:layout_constraintStart_toEndOf="@+id/textViewAge"
-        app:layout_constraintTop_toBottomOf="@+id/editTextSurname" />
-
-    <EditText
-        android:id="@+id/editTextRoomType"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="28dp"
-        android:ems="10"
-        android:hint="single"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintStart_toEndOf="@+id/textViewRoomType"
-        app:layout_constraintTop_toBottomOf="@+id/editTextAge" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -134,39 +82,58 @@
         app:srcCompat="@drawable/pattern" />
 
     <Button
-        android:id="@+id/buttonAdd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="20dp"
-        android:onClick="addGuest"
-        android:text="Add"
-        app:backgroundTint="#A13449"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextRoomType" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="24dp"
-        android:onClick="info"
-        android:text="Info"
-        app:backgroundTint="#A13449"
-        app:layout_constraintEnd_toStartOf="@+id/buttonAdd"
-        app:layout_constraintTop_toBottomOf="@+id/editTextRoomType" />
-
-    <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="48dp"
-        android:onClick="exit"
-        android:text="Exit"
+        android:onClick="back"
+        android:text="Back"
         app:backgroundTint="#832020"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="198dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:text="Milica Dimitrievska"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toEndOf="@+id/textViewRoomType"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="105dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="20dp"
+        android:text="3.0"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toEndOf="@+id/textViewAge"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="194dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="36dp"
+        android:text="This application is made to serve Hotel Star's purposes. You can use it to reserve a room in our hotel or to learn more about our hotel"
+        app:layout_constraintStart_toEndOf="@+id/textViewSurname"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="173dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="36dp"
+        android:text="Hotel Star App"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toEndOf="@+id/textViewName"
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
