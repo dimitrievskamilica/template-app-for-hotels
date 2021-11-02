@@ -5,49 +5,38 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.activity.result.contract.ActivityResultContracts
 import com.example.lib.Guest
 import com.example.lib.Hotel
 import com.example.lib.RoomInfo
-import com.example.vaja1.databinding.ActivityMainBinding
-import java.util.*
-import kotlin.random.Random
-
 
 class MainActivity : AppCompatActivity() {
+    var hotel = Hotel(10)
+    val resultContract = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            val data: Intent? = result.data
+            hotel.addGuest( Guest(data?.getIntExtra("id",0)!!,
+                data.getStringExtra("name")!!,
+                data.getStringExtra("surname")!!,
+                data.getIntExtra("age",30),
+                RoomInfo(data.getIntExtra("roomNumber",100),
+                    data.getStringExtra("roomType")!! ,
+                    data.getDoubleExtra("cost",50.00)
+                )
+            )
+            )
+            Log.i("MainActivityAdd", hotel.guests.last().toString())
 
-    private lateinit var binding: ActivityMainBinding
+        }
+
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root);
     }
 
-    fun addGuest(view: android.view.View) {
-
-        val intent = Intent()
-        intent.putExtra("name",binding.editTextName.text.toString())
-        intent.putExtra("surname",binding.editTextSurname.text.toString())
-        intent.putExtra("age",binding.editTextAge.text.toString().toInt())
-        intent.putExtra("roomType",binding.editTextRoomType.text.toString())
-        intent.putExtra("roomNumber",Random.nextInt(1,1000))
-        intent.putExtra("cost",Random.nextDouble(30.00,150.00))
-        intent.putExtra("id",Random.hashCode())
-        setResult(RESULT_OK,intent)
-        binding.editTextName.text.clear()
-        binding.editTextSurname.text.clear()
-        binding.editTextAge.text.clear()
-        binding.editTextRoomType.text.clear()
-        finish()
+    fun vnos(view: android.view.View) {
+        val intent = Intent(this,AddGuestActivity::class.java)
+        resultContract.launch(intent)
     }
-
-    fun info(view: android.view.View) {
-        val intent = Intent(this,AboutActivity::class.java)
-        startActivity(intent)
-    }
-    fun exit(view: android.view.View) {
-        finish();
-        System.exit(0);
-    }
-
 }
