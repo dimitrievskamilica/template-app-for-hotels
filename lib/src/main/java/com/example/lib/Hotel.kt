@@ -15,11 +15,11 @@ class Hotel(var numberOfGuests:Int) :Sizable{
         for(i in 1..numberOfGuests) {
             arrayOfguests.add(
                 Guest(
-                    UUID.randomUUID().toString().replace("-", ""),
+
                     faker.name.firstName(),
                     faker.name.lastName(),
                     faker.random.nextInt(16,90),
-                    RoomInfo(UUID.randomUUID().toString().replace("-", ""),faker.random.nextInt(1,1000),typeOfRoom[faker.random.nextInt(0,typeOfRoom.size-1)],faker.random.nextInt(30,150)+faker.random.nextDouble())
+                    RoomInfo(faker.random.nextInt(1,1000),typeOfRoom[faker.random.nextInt(0,typeOfRoom.size-1)],faker.random.nextInt(30,150)+faker.random.nextDouble())
                 )
             )
         }

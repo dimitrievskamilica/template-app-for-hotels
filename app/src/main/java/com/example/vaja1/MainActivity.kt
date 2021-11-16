@@ -17,11 +17,10 @@ class MainActivity : AppCompatActivity() {
     val resultContract = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){result ->
         if (result.resultCode == Activity.RESULT_OK) {
             val data: Intent? = result.data
-            app.data.addGuest( Guest(UUID.randomUUID().toString().replace("-", ""),
-                data?.getStringExtra("name")!!,
+            app.data.addGuest( Guest(data?.getStringExtra("name")!!,
                 data.getStringExtra("surname")!!,
                 data.getIntExtra("age",30),
-                RoomInfo(UUID.randomUUID().toString().replace("-", ""),data.getIntExtra("roomNumber",100),
+                RoomInfo(data.getIntExtra("roomNumber",100),
                     data.getStringExtra("roomType")!! ,
                     data.getDoubleExtra("cost",50.00)
                 )

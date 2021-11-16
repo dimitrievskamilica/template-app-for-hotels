@@ -11,12 +11,12 @@ fun readFile(): String? {
 fun main(){
     var hotel=Hotel(10)
     try{
-        var guest = Guest(UUID.randomUUID().toString().replace("-", ""),"Ema","Horvat",15, RoomInfo(UUID.randomUUID().toString().replace("-", ""),3,"single",50.50))
+        var guest = Guest("Ema","Horvat",15, RoomInfo(3,"single",50.50))
     }catch(ex: Exception){
         println(ex.toString())
     }
     try{
-        var guest = Guest(UUID.randomUUID().toString().replace("-", ""),"Ema","Horvat",91,RoomInfo(UUID.randomUUID().toString().replace("-", ""),3,"single",50.50))
+        var guest = Guest("Ema","Horvat",91,RoomInfo(3,"single",50.50))
     }catch(ex: Exception){
         println(ex.toString())
     }
