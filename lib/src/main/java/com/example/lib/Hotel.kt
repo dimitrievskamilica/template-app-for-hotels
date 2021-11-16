@@ -1,24 +1,25 @@
 package com.example.lib
 
 import io.github.serpro69.kfaker.Faker
+import java.util.*
 
 class Hotel(var numberOfGuests:Int) :Sizable{
     val faker = Faker()
-    val guests:MutableList<Guest>
+    var guests:MutableList<Guest>
     val typeOfRoom= arrayOf("single","double","twin","king","studio","triple")
     init {
         guests=generateGuests()
     }
-    private fun generateGuests():MutableList<Guest>{
+    fun generateGuests():MutableList<Guest>{
         val arrayOfguests = mutableListOf<Guest>()
         for(i in 1..numberOfGuests) {
             arrayOfguests.add(
                 Guest(
-                    faker.idNumber.hashCode(),
+                    UUID.randomUUID().toString().replace("-", ""),
                     faker.name.firstName(),
                     faker.name.lastName(),
                     faker.random.nextInt(16,90),
-                    RoomInfo(faker.random.nextInt(1,1000),typeOfRoom[faker.random.nextInt(0,typeOfRoom.size-1)],faker.random.nextInt(30,150)+faker.random.nextDouble())
+                    RoomInfo(UUID.randomUUID().toString().replace("-", ""),faker.random.nextInt(1,1000),typeOfRoom[faker.random.nextInt(0,typeOfRoom.size-1)],faker.random.nextInt(30,150)+faker.random.nextDouble())
                 )
             )
         }
@@ -36,6 +37,15 @@ class Hotel(var numberOfGuests:Int) :Sizable{
     }
     override fun size():Int{
         return guests.size
+    }
+    fun print(): String{
+        var string =""
+        var numberOfGuest=1
+        for(guest in guests) {
+            string+=numberOfGuest.toString()+". "+guest.name+" "+guest.surname+" "+guest.age+" "+guest.roomInfo.roomType+"\n"
+            numberOfGuest++
+        }
+        return  string
     }
 
 }

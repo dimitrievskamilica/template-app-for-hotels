@@ -2,6 +2,7 @@ package com.example.lib
 
 import java.io.IOException
 import java.lang.Exception
+import java.util.*
 
 fun readFile(): String? {
     val filePath = null
@@ -10,12 +11,12 @@ fun readFile(): String? {
 fun main(){
     var hotel=Hotel(10)
     try{
-        var guest = Guest(0,"Ema","Horvat",15, RoomInfo(3,"single",50.50))
+        var guest = Guest(UUID.randomUUID().toString().replace("-", ""),"Ema","Horvat",15, RoomInfo(UUID.randomUUID().toString().replace("-", ""),3,"single",50.50))
     }catch(ex: Exception){
         println(ex.toString())
     }
     try{
-        var guest = Guest(0,"Ema","Horvat",91,RoomInfo(3,"single",50.50))
+        var guest = Guest(UUID.randomUUID().toString().replace("-", ""),"Ema","Horvat",91,RoomInfo(UUID.randomUUID().toString().replace("-", ""),3,"single",50.50))
     }catch(ex: Exception){
         println(ex.toString())
     }

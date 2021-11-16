@@ -3,10 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Korisnik/AndroidStudioProjects/vaja1/app/src/main/res/layout/activity_about.xml" value="0.19947916666666668" />
+        <entry key="..\:/Users/Korisnik/AndroidStudioProjects/vaja1/app/src/main/res/layout/activity_about.xml" value="0.264" />
+        <entry key="..\:/Users/Korisnik/AndroidStudioProjects/vaja1/app/src/main/res/layout/activity_add_guest.xml" value="0.24375" />
+        <entry key="..\:/Users/Korisnik/AndroidStudioProjects/vaja1/app/src/main/res/layout/activity_delete_guest.xml" value="0.264" />
+        <entry key="..\:/Users/Korisnik/AndroidStudioProjects/vaja1/app/src/main/res/layout/activity_edit_guest.xml" value="0.2" />
         <entry key="..\:/Users/Korisnik/AndroidStudioProjects/vaja1/app/src/main/res/layout/activity_info.xml" value="0.264" />
         <entry key="..\:/Users/Korisnik/AndroidStudioProjects/vaja1/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/Korisnik/AndroidStudioProjects/vaja1/app/src/main/res/layout/activity_main2.xml" value="0.176" />
+        <entry key="..\:/Users/Korisnik/AndroidStudioProjects/vaja1/app/src/main/res/layout/activity_settingst.xml" value="0.24818840579710144" />
       </map>
     </option>
   </component>
