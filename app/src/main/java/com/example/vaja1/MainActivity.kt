@@ -70,17 +70,14 @@ class MainActivity : AppCompatActivity() {
         resultContract.launch(intent)
     }
 
-    fun edit(view: android.view.View) {
-        val intent = Intent(this,EditGuestActivity::class.java)
-        editResult.launch(intent)
-    }
-    fun delete(view: android.view.View) {
-        val intent = Intent(this,DeleteGuestActivity::class.java)
-        deleteResult.launch(intent)
-    }
 
     fun settings(view: android.view.View) {
         val intent = Intent(this,SettingsActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun showGuests(view: android.view.View) {
+        val intent = Intent(this,RecyclerViewActivity::class.java)
         startActivity(intent)
     }
 

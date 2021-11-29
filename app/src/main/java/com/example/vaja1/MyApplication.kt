@@ -17,10 +17,6 @@ const val MY_SP_FILE_NAME = "myshared.data"
 
 class MyApplication: Application() {
     lateinit var data: Hotel
-    val MAIN_ACTIVITY = "MAIN_ACTIVITY"
-    val INSERT_ACTIVITY = "INSERT_ACTIVITY"
-    val SETTINGS_ACTIVITY = "SETTINGS_ACTIVITY"
-    val ABOUT_ACTIVITY = "ABOUT_ACTIVITY"
 
     private lateinit var gson: Gson
     private lateinit var file: File
@@ -28,7 +24,7 @@ class MyApplication: Application() {
     override fun onCreate() {
         super.onCreate()
         sharedPref = getSharedPreferences(MY_SP_FILE_NAME, Context.MODE_PRIVATE)
-        data=Hotel(2)
+        data=Hotel(100)
         gson = Gson()
         file = File(filesDir, MY_FILE_NAME)
         if (!containsID()) {
