@@ -31,17 +31,17 @@ class AddGuestActivity : AppCompatActivity() {
         else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         }
-        if(intent.hasExtra("UPDATE_ID")) {
+        if(intent.hasExtra("position")) {
             pos =intent.getIntExtra("position",-1)
             if(pos!=-1) {
                 binding.buttonAdd.text = "Update"
-                binding.editTextName.setText(intent.getStringExtra("name"))
+                binding.editTextName.setText(app.data.guests[pos].name)
                 binding.editTextSurname.setText(app.data.guests[pos].surname)
-                binding.editTextAge.setText(intent.getStringExtra("age"))
+                binding.editTextAge.setText(app.data.guests[pos].age.toString())
                 binding.editTextRoomType.setText(app.data.guests[pos].roomInfo.roomType)
                 binding.buttonAdd.setTextKeepState("Update")
             }
-            //binding.editTextPersonId.visibility= View.INVISIBLE
+
 
         }
     }
@@ -55,7 +55,6 @@ class AddGuestActivity : AppCompatActivity() {
         intent.putExtra("roomType",binding.editTextRoomType.text.toString())
         intent.putExtra("roomNumber",Random.nextInt(1,1000))
         intent.putExtra("cost",Random.nextDouble(30.00,150.00))
-        //intent.putExtra("id",Random.hashCode())
             if(pos!=-1) {
                 intent.putExtra("position", pos.toString().toInt())
             }

@@ -21,8 +21,10 @@ class HotelAdapter(private val data: Hotel, private val onClickObject:HotelAdapt
 
     class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
         val imageView: ImageView = itemView.findViewById(R.id.imageView6)
-        val guestName: TextView = itemView.findViewById(R.id.textView12)
-        val guestAge: TextView = itemView.findViewById(R.id.textView13)
+        val guestName: TextView = itemView.findViewById(R.id.textView10)
+        val guestSurname: TextView = itemView.findViewById(R.id.textView12)
+        val guestAge: TextView = itemView.findViewById(R.id.textView11)
+        val roomType: TextView = itemView.findViewById(R.id.textView13)
         val line: CardView = itemView.findViewById(R.id.cvLine)
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -41,12 +43,13 @@ class HotelAdapter(private val data: Hotel, private val onClickObject:HotelAdapt
         Timber.d("MM onBindViewHolder ${data.guests.size}")
         holder.guestName.text = ItemsViewModel.name
         holder.guestAge.text = ItemsViewModel.age.toString()
+        holder.guestSurname.text = ItemsViewModel.surname
+        holder.roomType.text = ItemsViewModel.roomInfo.roomType
 
         holder.line.setOnLongClickListener(object:View.OnLongClickListener {
             override fun onLongClick(v: View?): Boolean {
                 println("Here code comes Click on ${holder.adapterPosition}")
-                //holder.adapterPosition lahko uporabimo za manipolacijo nad podatki v listi.
-                // holder.line.setCardBackgroundColor(Color.RED) //primer vpliva na vrstico
+
                 onClickObject.onLongClick(v, holder.adapterPosition)//delegacija klica na lasten objekt-sledi razlaga
 
                 return true
@@ -56,7 +59,6 @@ class HotelAdapter(private val data: Hotel, private val onClickObject:HotelAdapt
         holder.line.setOnClickListener(object:View.OnClickListener{
             override fun onClick(p0: View?) {
                 Timber.d("Here code comes Click on ${holder.adapterPosition}")
-                //holder.line.setCardBackgroundColor( Color.RED) //LOCAL ACTION
                 onClickObject.onClick(p0,holder.adapterPosition) //Action from Activity
             }
         })

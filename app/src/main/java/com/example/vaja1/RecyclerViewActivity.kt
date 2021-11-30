@@ -34,7 +34,7 @@ class RecyclerViewActivity : AppCompatActivity() {
                             app.data.guests[pos].surname = surname
                             app.data.guests[pos].age = age.toInt()
                             app.data.guests[pos].roomInfo.roomType = roomType
-                            Log.i("RVAC",age.toString())
+
                         }
                     }
                     app.saveData()
@@ -88,11 +88,6 @@ class RecyclerViewActivity : AppCompatActivity() {
             override fun onClick(p0: View?, pos:Int) {
                 Timber.d("Here code comes ${pos}.")
                 var addIntent= Intent(getApplicationContext(), AddGuestActivity::class.java)
-                addIntent.putExtra("UPDATE_ID", app.data.guests[pos].id)
-                addIntent.putExtra("name", app.data.guests[pos].name)
-               // addIntent.putExtra("surname", app.data.guests[pos].surname)
-                addIntent.putExtra("age", app.data.guests[pos].age.toString())
-                //var position=pos+1
                 addIntent.putExtra("position", pos.toString().toInt())
 
                 setResult(RESULT_OK, addIntent)
