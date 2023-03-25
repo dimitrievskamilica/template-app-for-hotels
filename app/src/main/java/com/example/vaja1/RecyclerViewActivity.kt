@@ -38,7 +38,7 @@ class RecyclerViewActivity : AppCompatActivity() {
                         }
                     }
                     app.saveData()
-                    adapter.notifyDataSetChanged()
+                    adapter.notifyItemChanged(pos)
                 }
             }
         }

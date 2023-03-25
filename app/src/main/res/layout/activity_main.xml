@@ -22,7 +22,7 @@
         android:id="@+id/button6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="152dp"
+        android:layout_marginStart="92dp"
         android:layout_marginTop="72dp"
         android:onClick="settings"
         android:text="Settings"
@@ -37,7 +37,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="72dp"
         android:onClick="vnos"
-        android:text="Vnos"
+        android:text="Add guest"
         app:backgroundTint="#A13449"
         app:layout_constraintStart_toEndOf="@+id/button6"
         app:layout_constraintTop_toBottomOf="@+id/button7" />
