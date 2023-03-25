@@ -31,7 +31,6 @@ class MyApplication: Application() {
             saveID(UUID.randomUUID().toString().replace("-", ""))
         }
         loadData()
-        //saveData()
     }
     fun saveID(id: String) {
         with(sharedPref.edit()) {
